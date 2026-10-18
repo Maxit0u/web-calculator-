@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+        <header class="header">
+            <div class="icono">🎓</div>
+            <h1>Calculadora de Notas</h1>
+            <p>Descubre qué nota necesitas en tu examen</p>
+        </header>
+
+        <section class="configuracion">
+            <h2>Configuración del ramo</h2>
+
+            <div class="campos-config">
+                <div class="campo">
+                    <label for="notaMinima">Nota mínima para aprobar</label>
+                    <input type="number" id="notaMinima"
+                           value="3.95" min="1" max="7" step="0.01">
+                </div>
+
+                <div class="campo">
+                    <label for="pesoPresentacion">Presentación (%)</label>
+                    <input type="number" id="pesoPresentacion"
+                           value="60" min="1" max="100">
+                </div>
+
+                <div class="campo">
+                    <label for="pesoExamen">Examen (%)</label>
+                    <input type="number" id="pesoExamen"
+                           value="40" min="1" max="100">
+                </div>
+            </div>
+        </section>
+
+        <section class="notas-section">
+            <div class="titulo-notas">
+                <div>
+                    <h2>Tus notas</h2>
+                    <p>Agrega tus calificaciones y ponderaciones.</p>
+                </div>
+
+                <button type="button" id="agregarNota" class="btn-agregar">
+                    + Agregar
+                </button>
+            </div>
+
+            <div id="listaNotas">
+            
+            </div>
+
+            <div class="total">
+                <span>Total de ponderaciones</span>
+                <strong id="totalPorcentaje">0%</strong>
+            </div>
+        </section>
+
+        <button type="button" id="calcular" class="btn-calcular">
+            Calcular nota necesaria
+        </button>
+
+        <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+
+        <section id="resultado" class="resultado" hidden>
+            <p>Tu promedio de presentación</p>
+            <div id="promedio" class="promedio">0.00</div>
+
+            <div class="separador"></div>
+
+            <p>Necesitas sacar en el examen</p>
+            <div id="notaExamen" class="nota-examen">0.0</div>
+
+            <p id="detalleResultado" class="detalle"></p>
+        </section>
+
+        <footer>
+            Calculadora de notas 
+        </footer>
+    </main>
+
+</body>
+</html>
